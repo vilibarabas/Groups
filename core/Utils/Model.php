@@ -3,6 +3,7 @@
 namespace Groups\Utils;
 
 use Groups\ModelInterface;
+use Opis\Database\{Database, Connection};
 
 class Model implements ModelInterface {
     private $connection = null;
