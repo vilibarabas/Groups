@@ -5,9 +5,12 @@ namespace Groups\Utils;
 use Groups\ModelInterface;
 
 class Model implements ModelInterface {
-    
-    public function connection(string $host, string $database, string $user, string $password){
+    private $connection = null;
+    public function connection(array $connectInfo){
+        if($this->connection == null)
+            $this->connection = new Connection($connectInfo['host'], $connectInfo['user'], $connectInfo['password']);
         
+        return $this->connection;
     }
     
     public function getRecords(string $select) {
