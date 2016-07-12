@@ -8,5 +8,5 @@ interface ModelInterface
     
     public function getRecords(string $select);
     
-    public function saveRecords(string $table, array $cols, array $records) : boolean;
+    public function saveRecords(string $table, array $cols, array $records) : bool;
 }
