@@ -1,9 +1,8 @@
 {
-    {
-        "name": "Groups",
-        "version": "dev-master",
-        "require": {
-            "php": ">=7.0.0"
+    "name": "Groups",
+    "version": "dev-master",
+    "require": {
+        "php": ">=7.0.0"
     },
     "autoload": {
         "psr-4": {"Groups\\": "core/"}
