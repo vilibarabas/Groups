@@ -12,7 +12,7 @@ class Group implements GroupInterface{
                       'KEYWORD_LIST' => []
                       ];    
     
-    public function getBasicKeyword() {
+    public function getBasicKeyword() : string{
         return $this->group['BASIC_KEYWORD'];
     }
     
@@ -27,7 +27,7 @@ class Group implements GroupInterface{
         }
     }
     
-    public function hasKeyword(string $keyword) {
+    public function hasKeyword(string $keyword) : bool{
         foreach($this->group['KEYWORD_LIST'] as $item) {
             if($item->keyword === $keyword) {
                 return true;
