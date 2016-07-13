@@ -11,7 +11,7 @@ class Model implements ModelInterface {
 
     public function connection(array $connectInfo){
         if($this->connection == null)
-            $this->connection = new Connection('mysql:host='. $connectInfo['host'].';dbname='. $connectInfo['db'], $connectInfo['user'], $connectInfo['password']);
+            $this->connection = new Connection('mysql:host='. $connectInfo['host'].';dbname='. $connectInfo['db']. ';charset=utf8', $connectInfo['user'], $connectInfo['password']);
             
         $this->db = new Database($this->connection);
         
