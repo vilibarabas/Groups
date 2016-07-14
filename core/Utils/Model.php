@@ -30,7 +30,6 @@ class Model implements ModelInterface {
             }
             else {
                 $result = $this->db->from($table)
-                 ->where()
                  ->select()
                  ->all();    
             }
