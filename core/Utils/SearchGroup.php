@@ -42,9 +42,10 @@ class SearchGroup {
     
     private function comparKeyword(string $word1, string $word2) : bool{
         if(preg_match('~('.$word2.')~ms', $word1, $mat) || preg_match('~('.$word2.')~ms', $word1, $mat)) {
-            return true;
+            if( strlen($mat[1]) >= 5) {
+                return true;   
+            }
         }
-        
         return false;
     }
 }

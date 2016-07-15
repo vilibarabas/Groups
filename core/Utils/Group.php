@@ -6,7 +6,7 @@ use Groups\GroupInterface;
 
 class Group implements GroupInterface{
     
-    private $group = [
+    public $group = [
                       'BASIC_KEYWORD' => null,
                       'KEYWORD_LIST' => [],
                       'INFO' => [],
