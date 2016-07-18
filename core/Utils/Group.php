@@ -5,7 +5,7 @@ namespace Groups\Utils;
 use Groups\GroupInterface;
 
 class Group implements GroupInterface{
-    
+    private $db = null;
     public $group = [
                       'BASIC_KEYWORD' => null,
                       'KEYWORD_LIST' => [],
@@ -21,6 +21,9 @@ class Group implements GroupInterface{
         return $this->group['FORM_LIST'];
     }
     
+    public function getData(string $info) {
+        return $this->group[$info];
+    }
     
     public function getInfoList() {
         $words = [];

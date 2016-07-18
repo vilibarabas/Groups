@@ -52,7 +52,11 @@ class Model implements ModelInterface {
         return $result;
     }
     
-    public function saveRecords(string $table, array $cols, array $records) : bool {
+    public function saveRecords(string $table, array $records) : bool {
+        $result = $this->db->insert($records
+            )
+            ->into($table);
+        
         return true;
     }
 }
