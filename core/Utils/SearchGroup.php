@@ -10,12 +10,12 @@ class SearchGroup {
         $this->groups[] = $group;
     }
     
-    public function searchAll(Group $group) {
+    public function searchAll(Group $group, string $table_name) {
         $words = $group->getInfo();
-        $this->throughGroups($words, $group->getBasicKeyword()->keyword);
+        $this->throughGroups($words, $group->getBasicKeyword()->keyword, $table_name);
     }
     
-    private function throughGroups(array $words, string $base_keyword) {
+    private function throughGroups(array $words, string $base_keyword, string $table_name) {
         
         foreach($this->groups as $id => $group) {
             
@@ -41,7 +41,7 @@ class SearchGroup {
                                             'password' => 's2lte2m'
                                             ];
                             $save = new SaveData($connectinfo);
-                            $save->saveData('grouped_keyword_list_2', $info);
+                            $save->saveData($table_name, $info);
                             #$group->addKeyword($base_keyword, $word->fleg, $word->freqvency, $gr_word->fleg);
                         }
                     }
@@ -51,7 +51,7 @@ class SearchGroup {
         }
     }
     
-    public function search(Group $group) {
+    public function search(Group $group, string $table_name) {
         $words = $group->getInfo();
        
         $this->throughGroups($words, $group->getBasicKeyword()->keyword);
